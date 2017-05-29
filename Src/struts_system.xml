@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+    <package name="system" extends="struts-default">
+		<global-results>
+			<!-- 下面定义的结果对所有的Action都有效 -->
+		    <result name="exception">/error.jsp</result>
+		    <result name="logonOut">/login.jsp</result>		    
+		</global-results>
+
+		<global-exception-mappings>
+			<!-- 指Action抛出Exception异常时，转入名为exception的结果。 -->
+			<exception-mapping exception="java.lang.Exception" result="exception"/>
+		</global-exception-mappings>
+
+		<action name="rightsAction" class="com.system.rights.RightsAction">
+			<result name="success">/success.jsp</result>
+			<result name="logonOut">/login.jsp</result>
+			<result name="noRights">/blank.jsp</result>
+			<result name="toMain">/admin/main.jsp</result>	
+			<result name="toMenuList">/admin/index.jsp</result>			
+			<result name="rightsList">/WEB-INF/pages/system/rightsList.jsp</result>
+			<result name="rightsUserList">/WEB-INF/pages/system/rightsUserList.jsp</result>
+			<result name="rightsMenuList">/WEB-INF/pages/system/rightsMenuList.jsp</result>
+			<result name="rightsTreeLeft">/WEB-INF/pages/system/rightsTreeLeft.jsp</result>
+			<result name="rightsTreeRight">/WEB-INF/pages/system/rightsTreeRight.jsp</result>
+    	</action>
+		
+        <action name="userAction" class="com.system.user.UserAction">
+			<result name="userAdd">/WEB-INF/pages/system/userAdd.jsp</result>
+			<result name="userEdit">/WEB-INF/pages/system/userEdit.jsp</result>
+			<result name="userList">/WEB-INF/pages/system/userList.jsp</result>
+			<result name="userAddRegister">/register.jsp</result>
+			<result name="userAddRegisterSuccess">/admin.jsp</result>
+    	</action>
+    	
+    	 <action name="roleAction" class="com.system.role.RoleAction">
+			<result name="roleAdd">/WEB-INF/pages/system/roleAdd.jsp</result>
+			<result name="roleEdit">/WEB-INF/pages/system/roleEdit.jsp</result>
+			<result name="roleList">/WEB-INF/pages/system/roleList.jsp</result>
+    	</action>
+    	
+    	<action name="loggerAction" class="com.system.log.LogAction">
+			<result name="loggerList">/WEB-INF/pages/system/loggerList.jsp</result>
+    	</action>
+	
+    </package> 
+			
+</struts>

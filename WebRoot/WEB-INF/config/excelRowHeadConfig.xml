@@ -1,0 +1,22 @@
+<list>
+  <com.netmall.entity.po.Bill>
+    <rowname>发票抬头</rowname>
+    <method>getBillhead</method>
+  </com.netmall.entity.po.Bill>
+  
+  <com.netmall.entity.po.Bill>
+    <rowname>发票类型</rowname>
+    <method>getBilltypename</method>
+  </com.netmall.entity.po.Bill>
+
+  <com.netmall.entity.po.Bill>
+    <rowname>发票内容</rowname>
+    <method>getBillcontent</method>
+  </com.netmall.entity.po.Bill>
+  
+  <com.netmall.entity.po.Bill>
+    <rowname>发票金额</rowname>
+    <method>getBillamount</method>
+  </com.netmall.entity.po.Bill>
+  
+</list>

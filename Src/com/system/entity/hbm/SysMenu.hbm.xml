@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.system.entity.po.SysMenu" table="sys_menu">
+        <id name="menucode" column="MENUCODE" type="java.lang.String">
+            <generator class="assigned"/>
+        </id>
+        <property name="menuname" column="MENUNAME" type="java.lang.String"/>
+           
+        <property name="menuenname" column="MENUENNAME" type="java.lang.String"/>
+           
+        <property name="parentmenucode" type="java.lang.String" column="PARENTMENUCODE"/>
+           
+        <property name="menuurl" type="java.lang.String" column="MENUURL"/>
+           
+        <property name="menuflag" column="MENUFLAG" type="java.lang.Long"/>
+            
+        <property name="sequ" column="SEQU" type="java.lang.Long"/>
+           
+        <property name="menuenable" column="MENUENABLE" type="java.lang.Long"/>
+		
+    </class>
+</hibernate-mapping>

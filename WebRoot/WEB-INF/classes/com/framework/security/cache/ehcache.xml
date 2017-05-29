@@ -1,0 +1,37 @@
+<ehcache>
+
+	<!-- Sets the path to the directory where cache .data files are created.
+
+			 If the path is a Java System Property it is replaced by
+			 its value in the running VM.
+
+			 The following properties are translated:
+			 user.home - User's home directory
+			 user.dir - User's current working directory
+			 java.io.tmpdir - Default temp file path -->
+	<diskStore path="java.io.tmpdir"/>
+
+
+	<defaultCache
+			maxElementsInMemory="10000"
+			eternal="false"
+			overflowToDisk="true"
+			timeToIdleSeconds="0"
+			timeToLiveSeconds="0"
+			diskPersistent="false"
+			diskExpiryThreadIntervalSeconds="120"/>
+
+	<!-- acegi cache-->
+	<cache name="userCache"
+		   maxElementsInMemory="10000"
+		   eternal="true"
+		   overflowToDisk="true"/>
+
+	<!-- acegi cache-->
+	<cache name="resourceCache"
+		   maxElementsInMemory="10000"
+		   eternal="true"
+		   overflowToDisk="true"/>
+
+	<!-- See http://ehcache.sourceforge.net/documentation/#mozTocId258426 for how to configure caching for your objects -->
+</ehcache>

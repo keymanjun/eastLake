@@ -1,0 +1,64 @@
+﻿    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">  
+    <html>  
+      <head>  
+        <title>dd.html</title>  
+          
+        <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">  
+        <meta http-equiv="description" content="this is my page">  
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">  
+        <style type="text/css">  
+            @import "dojoroot/dojo/resources/dojo.css";  
+            @import "dojoroot/dijit/themes/tundra/tundra.css";  
+        </style>  
+        <!-- 注意dojo包的位置  -->  
+        <script type="text/javascript" djConfig="parseOnLoad: true,isDebug: true" src="dojoroot/dojo/dojo.js"></script>  
+        <script type="text/javascript">  
+            dojo.require("dijit.Dialog");  
+            function showDia(){  
+                dijit.byId("dialog").show();  
+            }  
+            function close(){  
+                dijit.byId("dialog").hide();  
+                  
+            } 
+			function submit22(){ 
+				dijit.byId("dialog").hide();
+				dojo.byId("hider22").submit();
+                  
+            } 
+            dojo.addOnLoad(init)  
+            function init(){  
+                var btn = dojo.byId("closebtn"); 
+				var hider22 = dojo.byId("hider22"); 
+                dojo.connect(btn,"onclick",close);
+				dojo.connect(hider22,"onclick",submit22);
+            }  
+        </script>  
+        <style type="text/css">  
+            .dijitDialogUnderlay {  
+                background-color: #666666;  
+                opacity:0.5;  
+            }  
+        </style>  
+          
+      </head>  
+        
+      <body class="tundra"><!-- 运用dojoroot/dijit/themes/tundra/tundra.css的样式 -->  
+        <button id="b1" onclick="showDia()" >点击弹出</button><br/>  
+        <div dojoType="dijit.Dialog" id="dialog" closeNode="hider" title="我的第一个弹出层">  
+            <form action="index.jsp" method="post">
+                <table>  
+                    <tr>  
+                        <td><label for="name">姓名：</label></td>  
+                        <td><input type="text" id="name"/></td>  
+                      
+                    </tr>  
+                    <tr>  
+                        <td><input type="button" id="hider22" value="提交"/></td>  
+                        <td><button id="closebtn" >关闭</button> </td>  
+                    </tr>  
+                </table>  
+            </form>  
+        </div>  
+      </body>  
+    </html>  

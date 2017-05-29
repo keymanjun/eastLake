@@ -1,0 +1,75 @@
+/* 全局CSS定义 */
+body{font:12px/22px simsun}
+a{color:#333}
+	
+/* 颜色属性 */
+.fia a,.fi,.lani{text-decoration:underline}
+.lan,.lani,.fa a,.fia a{color:#039}
+a.more{float:right;font-weight:normal;font-size:12px}
+.hoc,a.hoc{color:#c00}
+.huic{color:#ccc}
+
+
+/*用户点评*/
+.tb_revw{border-collapse:collapse;color:#666;font:12px/25px arial;margin-left:1px;width:759px;}
+.tb_revw td{border:1px solid #88C7FB;text-align:center}
+.tb_revw tr.trbg{background:#F4FAFF}
+.tb_revw td.pdl{padding-left:15px;text-align:left;}
+.tb_revw td.pd2{padding-left:15px;text-align:left;line-height:16px;width:400px;}
+.rev_btn{border:1px solid #88c7fb;border-top:0;padding:5px 200px;height:22px}
+.rev_btn input{float:left;margin:0 10px 0 0}
+.rev_form{border:1px solid #88c7fb;border-top:0;padding:10px 85px}
+* html .tb_revw{margin-left:2px;width:736px}
+*+html .tb_revw{margin-left:0;width:736px}
+* html .rev_btn{margin-left:2px}
+
+ 
+/***标签页的样式*/
+/*clear*/
+.clearfix:after{content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac */
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+
+
+h1.fz20{font-size:20px;}
+.fz20{font-size:20px;}
+h1.fz24{font-size:24px;}
+.fz24{font-size:24px;}
+h1.fz16{font-size:16px;}
+h1.fz14{font-size:14px;}
+.fz14{font-size:14px;}
+.fz16{font-size:16px;}
+h1.fz18{font-size:18px;}
+.fz18{font-size:18px;}
+h1.fz12{font-size:12px;}
+.fz12{font-size:12px;}
+
+
+/* CSS Document */
+
+
+
+.comment{border-left:1px solid #88C7FB; border-right:1px solid #88C7FB; padding:11px;}
+.comment ul{height:27px; padding-left:9px; background:url(./tab_bg.jpg) repeat-x 0 -60px;}
+.comment li{float:left;height:27px; line-height:27px; padding:0 9px; background:url(./tab_bg.jpg) repeat-x 0 -95px; border-right:1px solid #A0BBCF; cursor:pointer}
+.comment .now{background-position: 0 -130px; border-left:1px solid #A0BBCF;}
+
+.comment dl{width:476px; margin-top:8px; padding-bottom:3px; background:url(./bg_line.gif) repeat-x left bottom;}
+.comment dt{float:left; width:62px;}
+.comment dt img{border:1px solid #999}
+.comment dd{float:left; width:410px;}
+.comment p{margin:0; padding:0; line-height:19px; color:#666;}
+.comment .user{padding:0 5px; line-height:23px; background:#F2F2F2;}
+.comment .user a{padding-right:23px; text-decoration:underline;}
+
+.comment strong{padding-left:26px; font-weight:bold;}
+.comment .good,.red{color:#F00}
+.comment .normal{color:#069}
+.comment .bad{color:#000}
+.comment .comment_c{padding-top:7px}
+
+
+.comment1{border:0;background:#FFF;}
+.comment1 .pl{padding:1px 0 0 23px;}

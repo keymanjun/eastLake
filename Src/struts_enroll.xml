@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+    <package name="enroll" extends="struts-default">
+       
+        <action name="enrollAction" class="com.application.enroll.action.EnrollAction">
+			<interceptor-ref name ="fileUpload">
+	            <param name ="allowedTypes" >
+                    image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/x-png, image/pjpeg
+                </param >   
+            </interceptor-ref>
+            <interceptor-ref name ="defaultStack"/>
+			<result name="enrollAdd">/WEB-INF/pages/enroll/enrollAdd.jsp</result>
+			<result name="enrollEdit">/WEB-INF/pages/enroll/enrollEdit.jsp</result>
+			<result name="enrollInfo">/WEB-INF/pages/enroll/enrollInfo.jsp</result>
+			<result name="enrollList">/WEB-INF/pages/enroll/enrollList.jsp</result>
+			<!--  <result name="enrollExport">/WEB-INF/pages/enroll/enrollStudentsExport.xls</result>-->
+			<result type="stream"> 
+				<param name="contentType">application/pdf;charset=gb2312</param>
+				<param name="bufferSize">2048</param> 
+				<param name="inputName">inputStream</param> 
+			</result>
+    	</action>
+    	
+    	<action name="enrollApproveAction" class="com.application.enroll.action.EnrollApproveAction">
+			<result name="enrollEdit">/WEB-INF/pages/enroll/enrollApprove.jsp</result>
+			<result name="enrollInfo">/WEB-INF/pages/enroll/enrollInfo.jsp</result>
+			<result name="enrollList">/WEB-INF/pages/enroll/enrollApproveList.jsp</result>
+			<result name="enrollToExport">/WEB-INF/pages/enroll/enrollExportList.jsp</result>
+			<result name="enrollExport">/WEB-INF/pages/enroll/enrollListExport.xls</result>
+			<result name="enrollToLabelExport">/WEB-INF/pages/enroll/enrollLabelExportList.jsp</result>
+			<result name="enrollExportLabel">/WEB-INF/pages/enroll/enrollListExportLabel.xls</result>
+			<result name="enrollListQuery">/WEB-INF/pages/enroll/enrollListQuery.jsp</result>
+    	</action>
+    	
+    	<action name="enrollScoreAction" class="com.application.enroll.action.EnrollScoreAction">
+    		<result name="enrollAdd">/WEB-INF/pages/enroll/enrollScoreAdd.jsp</result>
+			<result name="enrollEdit">/WEB-INF/pages/enroll/enrollScoreEdit.jsp</result>
+			<result name="enrollApprove">/WEB-INF/pages/enroll/enrollScoreApprove.jsp</result>
+			<result name="enrollList">/WEB-INF/pages/enroll/enrollScoreList.jsp</result>
+			<result name="enrollEditList">/WEB-INF/pages/enroll/enrollScoreEditList.jsp</result>
+			<result name="enrollApproveList">/WEB-INF/pages/enroll/enrollScoreApproveList.jsp</result>
+			<result name="enrollExportList">/WEB-INF/pages/enroll/enrollScoreExportList.jsp</result>
+			<result name="enrollQuery">/WEB-INF/pages/enroll/enrollScoreQuery.jsp</result>
+			<result name="enrollExport">/WEB-INF/pages/enroll/enrollScoreExport.xls</result>
+			<!-- result name="enrollToExport">/WEB-INF/pages/enroll/enrollExportList.jsp</result>
+			<result name="enrollExport">/WEB-INF/pages/enroll/enrollListExport.xls</result>
+			<result name="enrollToLabelExport">/WEB-INF/pages/enroll/enrollLabelExportList.jsp</result>
+			<result name="enrollExportLabel">/WEB-INF/pages/enroll/enrollListExportLabel.xls</result-->
+    	</action>
+    </package>
+    
+    <package name="enrollCheck" extends="json-default">
+    	<action name="enrollCheckAction" class="com.application.enroll.action.EnrollCheckAction">
+			<result type="json"/>
+    	</action>
+    </package>
+			
+</struts>

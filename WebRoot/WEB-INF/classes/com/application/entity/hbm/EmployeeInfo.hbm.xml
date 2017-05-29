@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.application.entity.po.EmployeeEntity" table="employee_info">
+    	<id name="eiId" column = "ei_id" type="java.lang.Long">
+    		<generator class="native"/>
+    	</id>
+    	<property name="diId" column="di_id" type="java.lang.Long"/>
+    	<property name="status" column="ei_status" type="java.lang.Integer"/>
+    	<property name="code" column="ei_code" type="java.lang.String"/>
+    	<property name="username" column="ei_name" type="java.lang.String"/>
+    	<property name="photo" column="ei_photo" type="java.lang.String"/>
+    	<property name="sex" column="ei_sex" type="java.lang.Integer"/>
+    	<property name="birthday" column="ei_birthday" type="java.lang.String"/>
+    	<property name="identifie" column="ei_identifie" type="java.lang.String"/>
+    	<property name="married" column="ei_married" type="java.lang.Integer"/>
+    	<property name="nation" column="ei_nation" type="java.lang.String"/>
+    	<property name="natives" column="ei_natives" type="java.lang.String"/>
+    	<property name="politics" column="ei_politics" type="java.lang.Integer"/>
+    	<property name="email" column="ei_email" type="java.lang.String"/>
+    	<property name="phone" column="ei_phone" type="java.lang.String"/>
+    	<property name="address" column="ei_address" type="java.lang.String"/>
+    	<property name="position" column="ei_position" type="java.lang.Integer"/>
+    	<property name="jobTitle" column="ei_jobtitle" type="java.lang.Integer"/>
+    	<property name="payroll" column="ei_payroll" type="java.lang.Double"/>
+    	<property name="hireType" column="ei_hire_type" type="java.lang.Integer"/>
+    	<property name="education" column="ei_education" type="java.lang.Integer"/>
+    	<property name="major" column="ei_major" type="java.lang.String"/>
+    	<property name="school" column="ei_school" type="java.lang.String"/>
+    	<property name="degree" column="ei_degree" type="java.lang.String"/>
+    	<property name="onboardTime" column="ei_onboard_time" type="java.lang.String"/>
+    	<property name="personStatus" column="ei_person_status" type="java.lang.Integer"/>
+    	<property name="startDate" column="ei_start_date" type="java.lang.String"/>
+    	<property name="endDate" column="ei_end_date" type="java.lang.String"/>
+    	<property name="notes" column="ei_note" type="java.lang.String"/>
+    	<property name="registeredLocal" column="ei_registered_local" type="java.lang.String"/>
+    	<property name="employeeComposition" column="ei_employee_composition" type="java.lang.Integer"/>
+    	<property name="firstEducation" column="ei_first_education" type="java.lang.Integer"/>
+    	<property name="firstMajor" column="ei_first_major" type="java.lang.String"/>
+    	<property name="firstSchool" column="ei_first_school" type="java.lang.String"/>
+    	<property name="firstDegree" column="ei_first_degree" type="java.lang.String"/>
+    	<property name="secondEducation" column="ei_second_education" type="java.lang.Integer"/>
+    	<property name="secondMajor" column="ei_second_major" type="java.lang.String"/>
+    	<property name="secondSchool" column="ei_second_school" type="java.lang.String"/>
+    	<property name="secondDegree" column="ei_second_degree" type="java.lang.String"/>
+    	<property name="thirdEducation" column="ei_third_education" type="java.lang.Integer"/>
+    	<property name="thirdMajor" column="ei_third_major" type="java.lang.String"/>
+    	<property name="thirdSchool" column="ei_third_school" type="java.lang.String"/>
+    	<property name="thirdDegree" column="ei_third_degree" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

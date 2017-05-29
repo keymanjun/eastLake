@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+<bean id="eventsTotalWeekService" parent="hibernateTxProxy">
+	<property name="target">
+		<bean class="com.admin.job.EventsTotalWeekJob" autowire="byName" />
+	</property>
+</bean>
+
+
+<!--定时触发器集合-->   
+<bean id="quartzTriggers" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">   
+  <property name="triggers">   
+      <list>
+      	  <ref bean="eventsTotalForWeekTrigger"/>
+      </list>
+  </property>   
+</bean>
+
+<!-- 第天凌晨1点开始统计事件的访问量与回复数 -->  
+<bean id="eventsTotalWeekJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">   
+ <property name="targetObject">   
+    <ref bean="eventsTotalWeekService"/>
+ </property>
+ <property name="targetMethod">   
+     <value>saveEventsTotalForWeekTrigger</value>   
+ </property>   
+</bean>
+
+<bean id="eventsTotalForWeekTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">   
+<property  name="jobDetail">
+<ref bean="eventsTotalWeekJobDetail"/>   
+</property>   
+<property name="cronExpression">
+<value>0 0 1 * * ? </value>
+<!--value>0 0/2 23 * * ? </value-->
+</property>   
+</bean> 
+
+
+</beans>

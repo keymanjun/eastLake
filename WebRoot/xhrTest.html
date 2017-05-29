@@ -1,0 +1,121 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr">
+    
+    <head>
+        <style type="text/css">
+            body, html { font-family:helvetica,arial,sans-serif; font-size:90%; }
+        </style>
+        <script src="dojoroot/dojo/dojo.js"
+        djConfig="parseOnLoad: true">
+        </script>
+        <script type="text/javascript">
+            dojo.require("dijit.form.Button");
+            dojo.require("dijit.form.TextBox");
+            dojo.require("dijit.form.CheckBox");
+			dojo.require("dijit.Dialog");
+
+			dojo.ready(initData);
+			function initData(){
+				var showButton = dojo.byId("showIt");
+				dojo.connect(showButton,"onClick",function(event){
+					dijit.byId("dialog1").show();
+				});
+			}
+			
+            function sendForm() {
+			initData();
+                var form = dojo.byId("myform");
+
+                dojo.connect(form, "onsubmit", function(event) {
+                    //Stop the submit event since we want to control form submission.
+                    dojo.stopEvent(event);
+
+                    //The parameters to pass to xhrPost, the form, how to handle it, and the callbacks.
+                    //Note that there isn't a url passed.  xhrPost will extract the url to call from the form's
+                    //'action' attribute.  You could also leave off the action attribute and set the url of the xhrPost object
+                    //either should work.
+                    var xhrArgs = {
+                        form: dojo.byId("myform"),
+                        handleAs: "text",
+                        load: function(data) {
+                            dojo.byId("response").innerHTML = data;
+                        },
+                        error: function(error) {
+                            //We'll 404 in the demo, but that's okay.  We don't have a 'postIt' service on the
+                            //docs server.
+                            dojo.byId("response").innerHTML = error;
+                        }
+                    }
+                    //Call the asynchronous xhrPost
+                    dojo.byId("response").innerHTML = "Form being sent..."
+                    var deferred = dojo.xhrPost(xhrArgs);
+                });
+            }
+            dojo.addOnLoad(sendForm);
+        </script>
+        <link rel="stylesheet" type="text/css" href="dojoroot/dijit/themes/claro/claro.css"
+        />
+    </head>
+    
+    <body class=" claro ">
+        <b>
+            Simple Form:
+        </b>
+        <br>
+        <blockquote>
+            <form action="certificateInfoAction!toEditPage.action?Ids=1"" id="myform">
+                Text:
+                <input type="text" dojoType="dijit.form.TextBox" name="formInput" value="Some text">
+                </input>
+                <br>
+                <br>
+                Checkbox:
+                <input type="checkbox" dojoType="dijit.form.CheckBox" name="checkboxInput">
+                </input>
+                <br>
+                <br>
+                <button type="submit" dojoType="dijit.form.Button" id="submitButton">
+                    Send it!
+                </button>
+            </form>
+        </blockquote>
+        <br>
+        <b>
+            Result
+        </b>
+        <div id="response">
+        </div>
+		<br>
+		  
+		<button dojoType="dijit.form.Button" type="Submit" id="showIt">Show it!</button>
+		
+		
+		<div dojoType="dijit.Dialog" id="dialog1" closeNode="hider" title="填写表单" style="display:none">
+		 <form action="certificateInfoAction!toEditPage.action?Ids=1" method="post" id="popuForm">
+		  <table>
+		   <tr>
+			<td><label for="name">姓名: </label></td>
+			<td><input type="text" id="name"></td>
+		   </tr>
+		   <tr>
+			<td><label for="loc">性别: </label></td>
+			<td><input type="text" id="loc"></td>
+		   </tr>
+		   <tr>
+			<td><label for="desc">年龄: </label></td>
+			<td><input type="text" id="desc"></td>
+		   </tr>
+		   <tr>
+			<td><label for="fileloc">电子邮件: </label></td>
+			<td><input type="file" id="fileloc"></td>
+		   </tr>
+		   <tr>
+			<td colspan="2" align="center">
+			 <input type="submit" id="hider" value="填好了"></td>
+		   </tr>
+		  </table>
+		 </form>
+		</div><br>
+    </body>
+
+</html>

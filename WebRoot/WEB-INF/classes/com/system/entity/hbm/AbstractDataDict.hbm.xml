@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.system.entity.po.AbstractDataDict" table="sys_datadict" dynamic-insert="true" dynamic-update="true" select-before-update="true">
+		<id name="dataid" column="DATA_ID" type="java.lang.Long"> 
+			<generator class="native"/>
+		</id>
+		
+		<discriminator column="CATEGORY" type="java.lang.String"/>
+		
+		<property name="datacode" column="DATA_CODE" type="java.lang.String"/>
+		
+		<property name="pdatacode" column="PDATA_CODE" type="java.lang.String"/>
+		
+		<property name="datavalue" column="DATA_VALUE" type="java.lang.String"/>
+		
+		<property name="sdesc" column="SDESC" type="java.lang.String"/>
+		
+		<property name="enable" column="ENABLE" type="java.lang.Integer"/>
+		
+        <subclass name="com.netmall.entity.po.IntegralType" discriminator-value="I"/>
+	</class>
+</hibernate-mapping>

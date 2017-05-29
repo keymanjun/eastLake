@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+    <package name="certificate" extends="struts-default">
+        <action name="certificateInfoAction" class="com.application.personnel.action.CertificateInfoAction">
+			<result name="certificateAdd">/WEB-INF/pages/certificate/certificateInfoAdd.jsp</result>
+			<result name="certificateEdit">/WEB-INF/pages/certificate/certificateInfoEdit.jsp</result>
+			<result name="certificateInfo">/WEB-INF/pages/certificate/certificateInfo.jsp</result>
+			<result name="certificateList">/WEB-INF/pages/certificate/certificateInfoList.jsp</result>
+    	</action>
+    </package>
+    
+    <package name="certificatePartial" extends="json-default">
+	    	<action name="certificateInfoPartialAction" class="com.application.personnel.action.CertificateInfoPartialAction">
+				<result type="json"/>
+	    	</action>
+	</package>
+    
+    <package name="leave" extends="struts-default">
+        <action name="leaveInfoAction" class="com.application.personnel.action.LeaveInfoAction">
+			<result name="leaveAdd">/WEB-INF/pages/leave/leaveInfoAdd.jsp</result>
+			<result name="leaveEdit">/WEB-INF/pages/leave/leaveInfoEdit.jsp</result>
+			<result name="leaveInfo">/WEB-INF/pages/leave/leaveInfo.jsp</result>
+			<result name="leaveList">/WEB-INF/pages/leave/leaveInfoList.jsp</result>
+    	</action>
+    </package>
+    
+    <package name="training" extends="struts-default">
+        <action name="trainingInfoAction" class="com.application.entity.po.TrainingEntity">
+			<result name="trainingAdd">/WEB-INF/pages/training/trainingInfoAdd.jsp</result>
+			<result name="trainingEdit">/WEB-INF/pages/training/trainingInfoEdit.jsp</result>
+			<result name="trainingInfo">/WEB-INF/pages/training/trainingInfo.jsp</result>
+			<result name="trainingList">/WEB-INF/pages/training/trainingInfoList.jsp</result>
+    	</action>
+    </package>
+			
+</struts>

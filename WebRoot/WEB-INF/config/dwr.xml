@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://getahead.org/dwr/dwr20.dtd">
+
+<dwr>
+	 <init>
+	 	  <!--converter id="sortDataEntity" class="org.directwebremoting.convert.BeanConverter"/>
+      <converter id="areaEntity" class="org.directwebremoting.convert.BeanConverter"/>
+	 	
+      <converter id="hyType" class="org.directwebremoting.convert.BeanConverter"/e-->
+   </init>
+	
+	<!-- 检查用户名是否存在 ValidateName的映射文件-->
+	<allow>
+		  <!--create creator="spring" javascript="DWRSearcherService">
+  	   <param name="beanName" value="searcherService" />
+       <include method="getSortHotspot"/>
+       <include method="getSortNewTopics"/>
+  	  </create>
+  	  <create creator="spring" javascript="DWRSAnalyseService">
+  	   <param name="beanName" value="analyseProxy" />
+       <include method="getZFAnalyseDataByTopicId"/>
+       <include method="getAreaMapByCityName"/>
+  	  </creat>
+		
+		
+	
+  	  
+  	 <convert match="com.operation.news.searcher.SortDataEntity" converter="sortDataEntity"></convert>
+  	 <convert match="com.operation.news.analyzer.AnalyseDataEntity" converter="areaEntity"></convert>
+  	  
+  	 <convert match="com.operation.news.entity.vo.THytype" converter="hyType"></converte-->
+  	  
+  	
+  	 
+	 </allow>
+</dwr>
+
+

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.application.entity.po.EnrollStudentEntity" table="enroll_student">
+    	<id name="id" column = "id" type="java.lang.Long">
+    		<generator class="native"/>
+    	</id>
+    	<property name="userId" column="user_id" type="java.lang.Long"/>
+    	<property name="enrollStatus" column="status" type="java.lang.Integer"/>
+    	<property name="scoreStatus" column="scoreStatus" type="java.lang.Integer"/>
+    	<property name="examCode" column="examCode" type="java.lang.String"/>
+    	<property name="name" column="name" type="java.lang.String"/>
+    	<property name="identify" column="identify" type="java.lang.String"/>
+    	<property name="no" column="no" type="java.lang.String"/>
+    	<property name="picPath" column="picpath" type="java.lang.String"/>
+    	<property name="brithDate" column="brithDate" type="java.lang.String"/>
+    	<property name="sex" column="sex" type="java.lang.Integer"/>
+    	<property name="nation" column="nation" type="java.lang.String"/>
+    	<property name="politicalType" column="politicalType" type="java.lang.String"/>
+    	<property name="phone" column="phone" type="java.lang.String"/>
+    	<property name="homeAddress" column="homeAddress" type="java.lang.String"/>
+    	<property name="schoolName" column="schoolName" type="java.lang.String"/>
+    	<property name="schoolCode" column="schoolCode" type="java.lang.String"/>
+    	<property name="major" column="major" type="java.lang.String"/>
+    	<property name="gaokaoCode" column="gaokaoCode" type="java.lang.String"/>
+    	<property name="targetSchoolName" column="targetSchoolName" type="java.lang.String"/>
+    	<property name="targetSchoolCode" column="targetSchoolCode" type="java.lang.String"/>
+    	<property name="targetMajor" column="targetMajor" type="java.lang.String"/>
+    	<property name="targetMajorCode" column="targetMajorCode" type="java.lang.String"/>
+    	<property name="awardStuff" column="awardStuff" type="java.lang.String"/>
+    	<property name="speciality" column="speciality" type="java.lang.String"/>
+    	<property name="contactAddress" column="contactAddress" type="java.lang.String"/>
+    	<property name="postcode" column="postcode" type="java.lang.String"/>
+    	<property name="email" column="email" type="java.lang.String"/>
+    	<property name="examRoom" column="examRoom" type="java.lang.String"/>
+    	<property name="registerType" column="registerType" type="java.lang.Integer"/>
+    	<property name="approveComment" column="approveComment" type="java.lang.String"/>
+    	<property name="approveScoreComment" column="approveScoreComment" type="java.lang.String"/>
+    	<property name="commitDate" column="commitDate" type="java.lang.String"/>
+    	
+    	<set name="majorScore">
+	        <key column="enroll_id"></key>
+	        <one-to-many class="com.application.entity.po.EnrollMajorScoreEntity"/>
+		</set>
+    </class>
+</hibernate-mapping>

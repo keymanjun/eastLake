@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd" >
+<struts>
+    <package name="department" extends="struts-default">
+       
+        <action name="departmentInfoAction" class="com.application.department.basic.action.DepartmentInfoAction">
+			<result name="departmentAdd">/WEB-INF/pages/department/departmentInfoAdd.jsp</result>
+			<result name="departmentEdit">/WEB-INF/pages/department/departmentInfoEdit.jsp</result>
+			<result name="departmentInfo">/WEB-INF/pages/department/departmentInfo.jsp</result>
+			<result name="departmentList">/WEB-INF/pages/department/departmentInfoList.jsp</result>
+    	</action>
+    </package> 
+			
+</struts>

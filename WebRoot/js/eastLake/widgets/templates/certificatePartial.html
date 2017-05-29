@@ -1,0 +1,61 @@
+<table width="600px" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td align="right" valign="top">
+			<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" class="border_blue">
+				<tr>
+					<td class="operate_title">
+						<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+							<tr>
+								<td>职工证书信息</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+				<tr>
+					<td>                	
+						<div  style="padding-top:10px; padding-bottom:10px;">
+							<form id="certificatePartialForm" name="certificateInfoAction" action="/eastLake/certificateInfoPartialAction!saveCertificate.action" method="post">
+								<input type="hidden" id="ciId" name="certificate.ciId"/>
+								<input type="hidden" id="eiId" name="certificate.eiId"/>
+								<input type="hidden" id="ciStatus" name="certificate.ciStatus"/>
+								<table width="100%" border="0" align="center" cellpadding="0" cellspacing="2" id="edittb">
+									<tr align="center" onmouseout="reChangeBackground(this)" onmouseover="changeBackground(this)">
+										<td  width="40%" align="center">证书编号<font color="red">(*)</font></td>
+										<td  width="60%" align="left">&nbsp;<input type="text" id="ciCode" dojotype="dijit.form.ValidationTextBox" trim="true" required="true" name="certificate.ciCode"></td>
+									</tr>
+									<tr align="center" onmouseout="reChangeBackground(this)" onmouseover="changeBackground(this)">
+										<td  width="40%" align="center">证书名称<font color="red">(*)</font></td>
+										<td  width="60%" align="left">&nbsp;<input type="text" id="ciName" dojotype="dijit.form.ValidationTextBox" trim="true" required="true" name="certificate.ciName"></td>
+									</tr>
+									<tr align="center" onmouseout="reChangeBackground(this)" onmouseover="changeBackground(this)">
+										<td  width="40%" align="center">发证机关<font color="red">(*)</font></td>
+										<td  width="60%" align="left">&nbsp;<input type="text" id="ciOffice" dojotype="dijit.form.ValidationTextBox" trim="true" required="true" name="certificate.ciOffice"></td>
+									</tr>
+									<tr align="center" onmouseout="reChangeBackground(this)" onmouseover="changeBackground(this)">
+										<td  width="40%" align="center">发证日期<font color="red">(*)</font></td>
+										<td  width="60%" align="left">&nbsp;<input type="text" id="ciDate" dojotype="dijit.form.DateTextBox" trim="true" required="true" name="certificate.ciDate"></td>
+									</tr>
+									<tr align="center" onmouseout="reChangeBackground(this)" onmouseover="changeBackground(this)">
+									<td  width="40%" align="center">备注</td>
+									<td  width="60%" align="left">&nbsp; <textarea id="ciNotes" dojoType="dijit.form.SimpleTextarea"
+									    rows="4" cols="40" style="width:auto;" name="certificate.ciNotes"></textarea></td>
+									</tr>
+									<tr align="center" onmouseout="reChangeBackground(this)" onmouseover="changeBackground(this)">
+										<td colspan="2" align="center">
+											<div dojoAttachPoint="button_div" dojoType="dijit.layout.BorderContainer">
+												<button type="submit" dojoType="dijit.form.Button" id="submitButton">
+                                    				提交
+                                				</button>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</form>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>

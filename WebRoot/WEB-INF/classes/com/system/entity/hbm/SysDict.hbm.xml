@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.system.entity.po.SysDict" table="sys_dict" dynamic-insert="true" dynamic-update="true" select-before-update="true">
+        <id name="ddid" column="DDID" type="java.lang.Long">
+            <generator class="native"/>
+        </id>
+        
+        <property name="ddcode" column="DDCODE" type="java.lang.String"/>
+        
+        <property name="ddname" column="DDNAME" type="java.lang.String"/>
+           
+        <property name="ddtype" column="DDTYPE" type="java.lang.Long"/>
+            
+        <property name="dddesc" column="DDDESC" type="java.lang.String"/>
+           
+        <property name="ddenable" column="DDENABLE" type="java.lang.Long"/>
+        
+        <property name="ddseq" column="DDSEQ" type="java.lang.Long"/>
+        
+        <property name="ddcreatedate" column="DDCREATEDATE" type="java.lang.String"/>
+        
+        <property name="ddcreateuser" column="DDCREATEUSER" type="java.lang.Long"/>
+        
+        <property name="ddeditdate" column="DDEDITDATE" type="java.lang.String"/>
+        
+        <property name="ddedituser" column="DDEDITUSER" type="java.lang.Long"/>
+            
+    </class>
+</hibernate-mapping>

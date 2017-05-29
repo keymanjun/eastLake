@@ -1,0 +1,9 @@
+div, ul,li, input, td { margin: 0; padding: 0; }
+
+ol, ul { list-style: none outside none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+/**/
+body { font-size:75%; color:#666; font-family:'Microsoft Yahei', Tahoma, Arial!important; font-family:'ËÎÌו', Tahoma, Arial;no-repeat fixed 0 0; }
+a { color:#214FA3; }
+a:hover { text-decoration:underline; }

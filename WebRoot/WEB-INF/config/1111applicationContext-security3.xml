@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Application context containing authentication, channel
+  - security and web URI beans.
+  -
+  - Only used by "filter" artifact.
+  -
+  -->
+
+<b:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:b="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+    <!--
+    <global-method-security pre-post-annotations="enabled">
+        <expression-handler ref="expressionHandler"/>
+    </global-method-security>
+    -->
+    
+    <!-- Automatically receives AuthenticationEvent messages -->
+    <b:bean id="loggerListener" class="org.springframework.security.authentication.event.LoggerListener"/>
+    
+    <http auto-config="true">
+			<!-- 指定登陆页面、成功页面、失败页面-->
+			<form-login login-page="/admin.jsp" default-target-url="/admin/main.jsp" authentication-failure-url="/admin.jsp" />
+			<!-- 尝试访问没有权限的页面时跳转的页面 -->
+			<access-denied-handler error-page="/commons/403.html"/>
+			<!-- 使用记住用户名、密码功能，指定数据源和加密的key -->
+			<remember-me data-source-ref="dataSource" />
+			<!-- logout页面，logout后清除session -->
+			<logout invalidate-session="true" logout-success-url="/admin.jsp" />
+			
+			<!-- 增加一个filter，这点与Acegi是不一样的，不能修改默认的filter了，这个filter位于FILTER_SECURITY_INTERCEPTOR之前 -->
+      <custom-filter before="FILTER_SECURITY_INTERCEPTOR" ref="customSecurityInterceptor" />			
+		</http>
+
+    <!--自定义的filter，必须包含三个属性,具体控制在这三个类中体现(authenticationManager,accessDecisionManager,securityMetadataSource)-->
+    <b:bean id="customSecurityInterceptor" class="com.framework.security.interceptor.CustomSecurityInterceptor">
+        <b:property name="authenticationManager" ref="authenticationManager" />
+        <b:property name="accessDecisionManager" ref="customAccessDecisionManagerBean" />
+        <b:property name="securityMetadataSource" ref="customSecurityMetadataSource" />
+    </b:bean>
+
+    <!-- 认证管理器，实现用户认证的入口，主要实现UserDetailsService接口即可 -->
+    <!--
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider user-service-ref="securityUserDetailService"/>
+    </authentication-manager>
+    <b:bean id="securityUserDetailService" class="com.framework.security.service.SecurityUserDetailService" />
+    -->
+
+    <!-- 访问决策器，决定某个用户具有的角色，是否有足够的权限去访问某个资源 -->
+    <b:bean id="customAccessDecisionManagerBean" class="com.framework.security.interceptor.CustomAccessDecisionManagerBean"/>
+    
+    <!-- 资源源数据定义，即定义某一资源可以被哪些角色访问 -->
+    <b:bean id="customSecurityMetadataSource" class="com.framework.security.interceptor.CustomSecurityMetadataSource" />
+
+
+    
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider>
+           <password-encoder hash="md5"/>
+           <jdbc-user-service data-source-ref="dataSource" 
+				         users-by-username-query="SELECT U.useraccount As username, U.userpwd As password, U.isenable AS 'enabled' FROM sys_user U where U.useraccount=?" 
+				         authorities-by-username-query="SELECT U.username, R.rolename as 'authority' FROM sys_user U,sys_role R,sys_user_role ur where u.userid=ur.userid and r.roleid=ur.roleid and u.useraccount=?" />
+        </authentication-provider>
+    </authentication-manager>
+     
+    <!--
+		<b:bean id="accessDecisionManager" class="org.springframework.security.vote.AffirmativeBased">
+			<b:property name="allowIfAllAbstainDecisions" value="false"/>
+			<b:property name="decisionVoters">
+				<b:list>
+					<b:bean class="org.springframework.security.vote.RoleVoter"/>
+					<b:bean class="org.springframework.security.vote.AuthenticatedVoter"/>
+				</b:list>
+			</b:property>
+		</b:bean>
+	
+		<b:bean id="secureResourceFilter" class="com.framework.security.SecureResourceFilter"/>
+		
+		<b:bean id="filterInvocationInterceptor" class="org.springframework.security.intercept.web.FilterSecurityInterceptor">
+			<b:property name="authenticationManager" ref="authenticationManager"/>
+			<b:property name="accessDecisionManager" ref="accessDecisionManager"/>
+			<b:property name="objectDefinitionSource" ref="secureResourceFilter"/>
+			<b:property name="observeOncePerRequest" value="false"/>
+			<custom-filter after="LAST"/>
+		</b:bean>
+	
+		
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="dataSource" 
+				users-by-username-query="SELECT U.useraccount As username, U.userpwd As password, U.isenable AS 'enabled' FROM sys_user U where U.useremail=?" 
+				authorities-by-username-query="SELECT U.username, R.rolename as 'authority' FROM sys_user U,sys_role R,sys_user_role ur where u.userid=ur.userid and r.roleid=ur.roleid and u.useremail=?" />
+		</authentication-provider>
+ 
+    -->
+
+   
+   <!--
+    <b:bean id="expressionHandler" class="org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler">
+        <b:property name="permissionEvaluator" ref="permissionEvaluator"/>
+    </b:bean>
+    
+    <b:bean id="permissionEvaluator" class="org.springframework.security.acls.AclPermissionEvaluator">
+        <b:constructor-arg ref="aclService"/>
+    </b:bean>
+    -->
+</b:beans>

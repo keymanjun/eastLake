@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.application.entity.po.CertificateEntity" table="certificate_info">
+    	<id name="ciId" column = "ci_id" type="java.lang.Long">
+    		<generator class="native"/>
+    	</id>
+    	<property name="eiId" column="ei_id" type="java.lang.Long"/>
+    	<property name="ciStatus" column="ci_status" type="java.lang.Long"/>
+    	<property name="ciCode" column="ci_code" type="java.lang.String"/>
+    	<property name="ciName" column="ci_name" type="java.lang.String"/>
+    	<property name="ciOffice" column="ci_office" type="java.lang.String"/>
+    	<property name="ciDate" column="ci_date" type="java.lang.String"/>
+    	<property name="ciNotes" column="ci_notes" type="java.lang.String"/>
+    	<property name="ciPerson" column="ci_person" type="java.lang.String"/>
+    	<property name="ciAddDate" column="ci_add_date" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

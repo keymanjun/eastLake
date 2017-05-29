@@ -1,0 +1,29 @@
+<public:component lightweight="true">
+<public:attach event="ondocumentready" onevent="hide()" />
+<public:attach event="onmouseover" onevent="show()" />
+<public:attach event="onmouseout" onevent="hide()" />
+<public:attach event="onmousedown" onevent="onselected()" />
+<script language="JavaScript" type="text/javascript">
+function show() {
+		if(element.className == element.className.replace("selected", ""))
+    	element.className = element.className + "hover";
+}
+function hide() {
+    element.className = element.className.replace("hover", "");
+}
+function onselected() {
+		var classname;
+		
+		for(i = 0; i < element.parentElement.rows.length; i++) {
+				classname = element.parentElement.rows[i].className;
+				
+				classname = classname.replace("selected", "");
+				classname = classname.replace("hover", "");
+
+				element.parentElement.rows[i].className = classname;
+		}
+			
+		element.className = element.className + "selected";
+}
+</script>
+</public:component>

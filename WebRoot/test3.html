@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE> </HEAD>
+<script type="text/javascript">
+var djConfig={ isDebug: true };
+</script>
+<script type="text/javascript" src="dojoroot/dojo/dojo.js"></script>
+
+<script>
+dojo.require("dojo.widget.Dialog");
+dojo.require("dojo.widget.Button");
+
+var dlg;
+function init()
+{
+    dlg=dojo.widget.byId("dialog0");
+}
+dojo.addOnLoad(init);
+</script> 
+
+<div>
+<button dojotype="button" onclick="dlg.show()">带表单的对话框</button>
+</div>
+<br>
+<div dojotype="dijit.dialog" id="dialog0" bgcolor="blue" bgopacity="0.5" toggle="fade" toggleDuration="250" lifetime="5000">
+<form action="test.html" method="post">
+<table border="0.5">
+<caption>登陆</caption>
+<tr colspan=2><hr></tr>
+<tr><td>用户名</td><td><input type="text"></td></tr>
+<tr><td>密  码:</td><td><input type="text"></td></tr>
+<tr><td><input type="submit" id="hider0"></td><td><input type="reset" id="reset"></td></tr>
+</table>
+</form>
+</div>
+
+ <BODY>
+ 
+ </BODY>
+</HTML>

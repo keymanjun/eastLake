@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+<bean id="logService" parent="hibernateTxProxy">
+	<property name="target">
+		<bean class="com.system.log.LogService" autowire="byName" />
+	</property>
+</bean>
+
+<bean id="rightsService" parent="hibernateTxProxy">
+	<property name="target">
+		<bean class="com.system.rights.RightsService" autowire="byName" />
+	</property>
+</bean>
+<bean id="userService" parent="hibernateTxProxy">
+	<property name="target">
+		<bean class=" com.system.user.UserService" autowire="byName" />
+	</property>
+</bean>
+<bean id="roleService" parent="hibernateTxProxy">
+	<property name="target">
+		<bean class=" com.system.role.RoleService" autowire="byName" />
+	</property>
+</bean>
+
+<!--bean id="validateName" class="com.framework.common.Bean.ValidateName">
+	<property name="userService">
+		<ref local="userService"/>
+	</property>
+</bean-->
+
+</beans>

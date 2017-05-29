@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.application.entity.po.LeaveEntity" table="leave_info">
+    	<id name="liId" column = "li_id" type="java.lang.Long">
+    		<generator class="native"/>
+    	</id>
+    	<property name="eiId" column = "ei_id" type="java.lang.Long"/>
+    	<property name="liType" column = "di_type" type="java.lang.Long"/>
+    	<property name="liStatus" column = "di_status" type="java.lang.Long"/>
+    	<property name="liStartDate" column="li_start_date" type="java.lang.String"/>
+    	<property name="liEndDate" column="li_end_date" type="java.lang.String"/>
+    	<property name="liNotes" column="li_notes" type="java.lang.String"/>
+    	<property name="liPerson" column="li_person" type="java.lang.String"/>
+    	<property name="liDate" column="li_date" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

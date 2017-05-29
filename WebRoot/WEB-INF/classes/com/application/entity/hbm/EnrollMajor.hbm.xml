@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.application.entity.po.EnrollMajorEntity" table="enroll_major">
+    	<id name="id" column = "id" type="java.lang.Long">
+    		<generator class="native"/>
+    	</id>
+    	<property name="orginalNo" column="orginalno" type="java.lang.String"/>
+    	<property name="name" column="name" type="java.lang.String"/>
+    	<property name="no" column="no" type="java.lang.String"/>
+    	<property name="examDate" column="examDate" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

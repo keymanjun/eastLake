@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.application.entity.po.EnrollMajorScoreEntity" table="enroll_major_score">
+    	<id name="id" column = "id" type="java.lang.Long">
+    		<generator class="native"/>
+    	</id>
+    	<property name="enrollId" column="enroll_id" type="java.lang.Long"/>
+    	<property name="majorItemName" column="majorItemName" type="java.lang.String"/>
+    	<property name="majorItemScore" column="majorItemScore" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

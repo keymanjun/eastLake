@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.system.entity.po.SysLog" table="sys_log">
+        <id name="logid" column="LOGID" type="java.lang.Long">           
+           <generator class="native"/>
+        </id>
+        <property name="logacount" column="LOGACOUNT" type="java.lang.String"/>
+           
+        <property name="logtype" column="LOGTYPE" type="java.lang.Long"/>
+            
+        <property name="loginfo" column="LOGINFO" type="java.lang.String"/>
+            
+        <property name="logdate" column="LOGDATE" type="java.lang.String"/>
+           
+         <property name="logmenu" column="LOGMENU" type="java.lang.String"/>
+         
+         <property name="logurl" column="LOGURL" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

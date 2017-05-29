@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.system.entity.po.SysUserRole" table="sys_user_role" dynamic-update="false">
+        <id name="id" column="ID" type="java.lang.Long">
+            <generator class="native"/>
+        </id>
+        <property name="userid" column="USERID" type="java.lang.Long"/>
+        <property name="roleid" column="ROLEID" type="java.lang.Long"/>            
+       
+    </class>
+</hibernate-mapping>

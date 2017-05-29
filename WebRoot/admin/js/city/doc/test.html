@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>artDialog v3 demo</title>
+<script src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../artDialog.min.js"></script>
+
+<link href="my.css" rel="stylesheet" type="text/css" />
+
+
+
+<script> 
+(function($){
+	// 改变默认配置
+	var d = $.dialog.defaults;
+	// 预缓存皮肤，数组第一个为默认皮肤
+	d.skin = ['default', 'chrome', 'facebook', 'aero'];
+	d.plus = true;
+	// 是否开启特效
+	d.effect = true;
+	// 指定超过此面积的对话框拖动的时候用替身
+	//d.showTemp = 0;
+	
+})(art);
+
+
+	
+	function _getSpan(obj){
+		document.getElementById('test').value=obj.innerHTML;
+	}
+	
+	function _test(){		
+		
+	art.dialog({
+	title:'选择城市',
+	drag: false,
+	time: 5,
+	id: 'testID',
+	skin:'aero',
+	follow: document.getElementById('btn'),	
+	content: '<table><tr><td><ul class="">'
+      +'<li>B&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >北京</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)">保定</span></li>'
+			+'<li>C&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >长春</a>&nbsp;<a href="http://www.zhaopin.com/changzhutan/" >长株潭</a>&nbsp;<a href="http://www.zhaopin.com/chengdu/">成都</a>&nbsp;<a href="http://www.zhaopin.com/chongqing/">重庆</a>&nbsp;<a href="http://www.zhaopin.com/changzhou/">常州</a></li>'
+			+'<li>D&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >大连</a>&nbsp;<a href="http://www.zhaopin.com/dongguan/">东莞</a>&nbsp;<a href="http://www.zhaopin.com/daqing/">大庆</a></li>'
+			+'<li>F&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >福州</a>&nbsp;<a href="http://www.zhaopin.com/foshan/" >佛山</a></li>'
+			+'<li>G&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >广州</a>&nbsp;<a href="http://www.zhaopin.com/guiyang/">贵阳</a>&nbsp;<a href="http://www.zhaopin.com/ganzhou/">赣州</a></li>'
+			+'<li>H&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >哈尔滨</a>&nbsp;<a href="http://www.zhaopin.com/hangzhou/" >杭州</a>&nbsp;<a href="http://www.zhaopin.com/hefei/">合肥</a>&nbsp;<a href="http://www.zhaopin.com/handan/">邯郸</a></li>'
+			+'<li>J&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >济南</a>&nbsp;<a href="http://www.zhaopin.com/jilin/" >吉林</a>&nbsp;<a href="http://www.zhaopin.com/jiaxing/" >嘉兴</a>&nbsp;<a href="http://www.zhaopin.com/jiangmen/">江门</a></li>'
+			+'<li>K&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >昆明</a></li>'
+			+'<li>L&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >临沂</a>&nbsp;<a href="http://www.zhaopin.com/lanzhou/">兰州</a>&nbsp;<a href="http://www.zhaopin.com/luoyang/">洛阳</a></li>'
+			+'</ul><td>'
+			+'<td><ul class="">'
+      +'<li>M&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >绵阳</span></li>'
+			+'<li>N&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >南京</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >宁波</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >南昌</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >南通</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >南宁</span></li>'
+			+'<li>Q&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >青岛</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >秦皇岛</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >泉州</span></li>'
+			+'<li>S&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >上海</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >深圳</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >沈阳</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >石家庄</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >苏州</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >绍兴</span></li>'
+			+'<li>T&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >天津</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >太原</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >唐山</span></li>'
+			+'<li>W&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >武汉</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >无锡</span> <span style="cursor:hand" onclick="_getSpan(this)" >温州</span> <span style="cursor:hand" onclick="_getSpan(this)" >威海</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >乌鲁木齐</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >芜湖</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >潍坊</span></li>'
+			+'<li>X&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >西安</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >厦门</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >徐州</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >襄樊</span></li>'
+			+'<li>Y&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >扬州</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >烟台</span></li>'
+			+'<li>Z&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >郑州</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >中山</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >珠海</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >淄博</span>&nbsp;<span style="cursor:hand" onclick="_getSpan(this)" >珠三角</span></li>'
+			+'</ul></td></tr></table>',
+  window: 'top'
+});
+}
+
+</script>
+
+
+<style type="text/css">
+.t_test{
+	position:absolute;
+	width:50%
+}	
+	
+.t_contul2
+{
+width:100%;
+position:relative;
+padding-top:16px;
+left:250px;
+}	
+</style>
+ 
+</head>
+ 
+<body>
+		<input id="test"><input type="button" value="点击" onclick="_test()" id="btn">
+</div>
+</body>
+</html>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.application.entity.po.TrainingEntity" table="training_info">
+    	<id name="tiId" column = "ti_id" type="java.lang.Long">
+    		<generator class="native"/>
+    	</id>
+    	<property name="diId" column="di_id" type="java.lang.Long"/>
+    	<property name="tiType" column="ti_type" type="java.lang.Long"/>
+    	<property name="tiStatus" column="ti_status" type="java.lang.Long"/>
+    	<property name="tiDate" column="ti_date" type="java.lang.String"/>
+    	<property name="tiContent" column="ti_content" type="java.lang.String"/>
+    	<property name="tiAddress" column="ti_address" type="java.lang.String"/>
+    	<property name="tiNotes" column="ti_notes" type="java.lang.String"/>
+    	<property name="tiPerson" column="ti_person" type="java.lang.String"/>
+    	<property name="tiAddDate" column="ti_add_date" type="java.lang.String"/>
+    </class>
+    
+</hibernate-mapping>

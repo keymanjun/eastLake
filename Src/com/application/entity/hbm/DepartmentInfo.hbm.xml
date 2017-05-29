@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.application.entity.po.DepartmentEntity" table="department_info">
+    	<id name="diId" column = "di_id" type="java.lang.Long">
+    		<generator class="native"/>
+    	</id>
+    	<property name="code" column="di_code" type="java.lang.String"/>
+    	<property name="name" column="di_name" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.system.entity.po.SysRole" table="sys_role">
+        <id name="roleid" column="ROLEID" type="java.lang.Long">            
+            <generator class="native"/>
+        </id>
+        <property name="rolename" column="ROLENAME" type="java.lang.String"/>
+           
+        <property name="roledesc" column="ROLEDESC" type="java.lang.String"/>
+           
+        <property name="roletype" column="ROLETYPE" type="java.lang.Long"/>
+            
+        <property name="roleorgcode" column="ROLEORGCODE" type="java.lang.String"/>
+            
+        <property name="roleenable" column="ROLEENABLE" type="java.lang.Long"/>
+        
+        <property name="creater" column="CREATER" type="java.lang.String"/>
+        <property name="createtime" column="CREATETIME" type="java.lang.String"/>
+        <bag name="userList" table="sys_user_role" lazy="false" inverse="true" cascade="none">
+        	<key column="ROLEID" />
+        	<many-to-many class="com.system.entity.po.SysUser" column="USERID" />
+        </bag>
+        
+        
+    </class>
+</hibernate-mapping>
