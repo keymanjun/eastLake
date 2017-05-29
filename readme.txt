@@ -2,8 +2,6 @@ admin
 123
 
 
-
-
 remote server :219.140.186.4:8090
 administrator/81931266
 
